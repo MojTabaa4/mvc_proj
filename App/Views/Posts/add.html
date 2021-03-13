@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Add Post{% endblock %}
+
+{% block body %}
+
+<h1>Add Post</h1>
+
+{% if user.errors is not empty %}
+<p style="color:#e50909"><b>Errors:</b></p>
+<ul>
+    {% for error in user.errors %}
+    <li>{{ error }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<form method="post" action="/post/add">
+    <div>
+        <label for="inputTitle">Title</label>
+        <input id="inputTitle" name="name" type="text" placeholder="Name" autofocus value="{{ user.name }}" required/>
+    </div>
+    <div>
+        <label for="inputEmail">Category</label>
+        <input id="inputEmail" name="email" type="text" placeholder="email address" value="{{ user.email }}" required/>
+    </div>
+    <div>
+        <label for="inputBody">Body</label>
+        <textarea id="inputBody" name="body" required></textarea></div>
+    <button type="submit">Post Article</button>
+</form>
+
+{% endblock %}

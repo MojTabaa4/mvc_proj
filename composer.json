@@ -1,0 +1,17 @@
+{
+  "require": {
+    "twig/twig": "^2.0",
+    "ext-pdo": "*",
+    "symfony/http-foundation": "^5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "App\\": "App/",
+      "App\\Models\\": "App/Models/"
+    }
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^5.2"
+  }
+}
